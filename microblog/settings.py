@@ -1,15 +1,19 @@
-from pathlib import Path
-from datetime import timedelta
 import os
+from pathlib import Path
+from decouple import config
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'your-secret-key-here'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config('SECRET_KEY', default='your-secret-key-here')
 
-DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,6 +57,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'microblog.wsgi.application'
 
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -60,6 +65,7 @@ DATABASES = {
     }
 }
 
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -75,12 +81,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Internationalization
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_TZ = True
 
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # REST Framework settings
@@ -91,14 +101,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
-
-# JWT settings
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
 
 # CORS settings
