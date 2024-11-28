@@ -165,7 +165,7 @@ Instale as dependências:
 npm install
 ```
 
-Inicie o servidor de desenvolvimento:
+**Inicie o servidor de desenvolvimento**:
 
 ```bash
 ng serve
@@ -174,14 +174,15 @@ ng serve
 A aplicação estará disponível em http://localhost:4200/.
 
 
-Build para produção (opcional):
+**Build para produção (opcional)**:
 ```bash
 ng build --configuration production
 ```
 
-Os arquivos de produção serão gerados na pasta dist/microblog-frontend.
+**Os arquivos de produção serão gerados na pasta dist/microblog-frontend.**
 
 ## 📂 Estrutura do Projeto
+
 microblog-frontend/
 ├── src/
 │   ├── app/
@@ -206,41 +207,41 @@ microblog-frontend/
 └── README.md            # Este arquivo
 
 ## Integração com a API Backend
-A aplicação frontend se comunica com a API backend através dos serviços definidos na pasta services.  As URLs da API são configuradas no arquivo app.config.ts.
+**A aplicação frontend se comunica com a API backend através dos serviços definidos na pasta services.  As URLs da API são configuradas no arquivo app.config.ts.**
 
 ## 🧪 Testes
 
-Execute os testes unitários usando:
+**Execute os testes unitários usando:**
 
 ng test
 
 ## 🤔 Decisões de Design e Arquitetura
 
-Componentes Reutilizáveis: A aplicação utiliza componentes Angular para modularizar a interface e promover a reutilização de código.
+**Componentes Reutilizáveis**: A aplicação utiliza componentes Angular para modularizar a interface e promover a reutilização de código.
 
-Serviços para API: Os serviços encapsulam a lógica de comunicação com a API backend, facilitando a manutenção e os testes.
+**Serviços para API**: Os serviços encapsulam a lógica de comunicação com a API backend, facilitando a manutenção e os testes.
 
-Guardas de Rota: Os guardas de rota protegem as rotas que exigem autenticação, redirecionando usuários não autenticados para a página de login.
+**Guardas de Rota**: Os guardas de rota protegem as rotas que exigem autenticação, redirecionando usuários não autenticados para a página de login.
 
-Interceptadores HTTP: Os interceptadores adicionam funcionalidades como cabeçalhos de autorização às requisições HTTP.
+**Interceptadores HTTP**: Os interceptadores adicionam funcionalidades como cabeçalhos de autorização às requisições HTTP.
 
-TypeScript: O uso de TypeScript melhora a qualidade do código, facilita a refatoração e reduz erros em tempo de execução.
+**TypeScript**: O uso de TypeScript melhora a qualidade do código, facilita a refatoração e reduz erros em tempo de execução.
 
-RxJS: RxJS permite lidar com fluxos de dados assíncronos de forma eficiente e elegante.
+**RxJS**: RxJS permite lidar com fluxos de dados assíncronos de forma eficiente e elegante.
 
 ## 🔜 Próximos Passos Frontend
 
-[ ] Implementar paginação no feed.
+- [ ] Implementar paginação no feed.
 
-[ ] Melhorar a estilização e o design da interface.
+- [ ] Melhorar a estilização e o design da interface.
 
-[ ] Adicionar recursos de busca.
+- [ ] Adicionar recursos de busca.
 
-[ ] Implementar notificações em tempo real.
+- [ ] Implementar notificações em tempo real.
 
-[ ] Adicionar suporte a upload de imagens.
+- [ ] Adicionar suporte a upload de imagens.
 
-[ ] Implementar um sistema de mensagens privadas.
+- [ ] Implementar um sistema de mensagens privadas.
 
 ## 👥 Contribuindo
 
