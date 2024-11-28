@@ -183,28 +183,99 @@ ng build --configuration production
 
 ## 📂 Estrutura do Projeto
 
+
 microblog-frontend/
 ├── src/
 │   ├── app/
-│   │   ├── components/  # Componentes reutilizáveis
-│   │   ├── guards/      # Guardas de rota para autenticação
-│   │   ├── interceptors/ # Interceptadores para requisições HTTP
-│   │   ├── models/      # Modelos de dados
-│   │   ├── services/     # Serviços para comunicação com a API
-│   │   ├── app.component.*  # Componente principal
-│   │   ├── app.config.*     # Configurações do aplicativo
-│   │   ├── app.routes.ts    # Rotas da aplicação
-│   │   └── ...
-│   ├── styles.css        # Estilos globais
-│   ├── ...
-│   ├── index.html        # Arquivo HTML principal
-│   ├── main.ts           # Ponto de entrada principal
-│   └── ...
-├── public/              # Arquivos estáticos
-├── angular.json         # Configurações do Angular CLI
-├── package.json         # Configurações do projeto
-├── ...
-└── README.md            # Este arquivo
+│   │   ├── components/          # Componentes reutilizáveis
+│   │   │   ├── feed/           # Componente do feed de posts
+│   │   │   ├── login/          # Componente de login
+│   │   │   ├── navbar/         # Barra de navegação
+│   │   │   ├── profile/        # Perfil do usuário
+│   │   │   └── register/       # Registro de usuário
+│   │   │
+│   │   ├── guards/             # Guardas de rota
+│   │   │   └── auth.guard.ts   # Proteção de rotas autenticadas
+│   │   │
+│   │   ├── interceptors/       # Interceptadores HTTP
+│   │   │   └── token.interceptor.ts  # Adiciona token nas requisições
+│   │   │
+│   │   ├── models/             # Interfaces e tipos
+│   │   │   ├── post.model.ts   # Modelo de post
+│   │   │   └── user.model.ts   # Modelo de usuário
+│   │   │
+│   │   ├── services/           # Serviços da aplicação
+│   │   │   ├── auth.service.ts # Serviço de autenticação
+│   │   │   ├── post.service.ts # Serviço de posts
+│   │   │   └── user.service.ts # Serviço de usuários
+│   │   │
+│   │   ├── app.component.*     # Componente raiz
+│   │   ├── app.config.*        # Configurações
+│   │   └── app.routes.ts       # Definição de rotas
+│   │
+│   ├── assets/                 # Recursos estáticos
+│   ├── styles.css              # Estilos globais
+│   ├── index.html              # HTML principal
+│   └── main.ts                 # Ponto de entrada
+│
+├── public/                     # Arquivos públicos
+├── angular.json                # Configuração Angular
+├── package.json                # Dependências
+├── tsconfig.json              # Configuração TypeScript
+└── README.md                  # Documentação
+
+
+### 📝 Descrição dos Diretórios
+
+#### `/src/app/components`
+Contém todos os componentes Angular da aplicação, cada um em seu próprio diretório com arquivos de template, estilo e lógica.
+
+#### `/src/app/guards`
+Guardas de rota para proteger rotas que requerem autenticação.
+
+#### `/src/app/interceptors`
+Interceptadores HTTP para modificar requisições/respostas globalmente.
+
+#### `/src/app/models`
+Interfaces TypeScript que definem a estrutura dos dados.
+
+#### `/src/app/services`
+Serviços que encapsulam a lógica de negócios e comunicação com a API.
+
+#### `/src/assets`
+Arquivos estáticos como imagens, ícones e fontes.
+
+#### `/src/styles`
+Arquivos de estilo globais e configurações de tema.
+
+### 🔧 Arquivos de Configuração
+
+- `angular.json`: Configurações do projeto Angular
+- `package.json`: Dependências e scripts npm
+- `tsconfig.json`: Configurações do TypeScript
+- `README.md`: Documentação do projeto
+
+### 🎨 Componentes Principais
+
+1. **Feed Component**
+   - Exibe posts
+   - Gerencia interações
+   - Implementa paginação
+
+2. **Login/Register Components**
+   - Formulários de autenticação
+   - Validação de dados
+   - Feedback de erro
+
+3. **Profile Component**
+   - Exibe dados do usuário
+   - Gerencia seguidores
+   - Edita informações
+
+4. **Navbar Component**
+   - Navegação principal
+   - Estado de autenticação
+   - Menu de usuário
 
 ## Integração com a API Backend
 **A aplicação frontend se comunica com a API backend através dos serviços definidos na pasta services.  As URLs da API são configuradas no arquivo app.config.ts.**
@@ -212,22 +283,23 @@ microblog-frontend/
 ## 🧪 Testes
 
 **Execute os testes unitários usando:**
-
+```bash
 ng test
+```
 
 ## 🤔 Decisões de Design e Arquitetura
 
-**Componentes Reutilizáveis**: A aplicação utiliza componentes Angular para modularizar a interface e promover a reutilização de código.
+- **Componentes Reutilizáveis**: A aplicação utiliza componentes Angular para modularizar a interface e promover a reutilização de código.
 
-**Serviços para API**: Os serviços encapsulam a lógica de comunicação com a API backend, facilitando a manutenção e os testes.
+- **Serviços para API**: Os serviços encapsulam a lógica de comunicação com a API backend, facilitando a manutenção e os testes.
 
-**Guardas de Rota**: Os guardas de rota protegem as rotas que exigem autenticação, redirecionando usuários não autenticados para a página de login.
+- **Guardas de Rota**: Os guardas de rota protegem as rotas que exigem autenticação, redirecionando usuários não autenticados para a página de login.
 
-**Interceptadores HTTP**: Os interceptadores adicionam funcionalidades como cabeçalhos de autorização às requisições HTTP.
+- **Interceptadores HTTP**: Os interceptadores adicionam funcionalidades como cabeçalhos de autorização às requisições HTTP.
 
-**TypeScript**: O uso de TypeScript melhora a qualidade do código, facilita a refatoração e reduz erros em tempo de execução.
+- **TypeScript**: O uso de TypeScript melhora a qualidade do código, facilita a refatoração e reduz erros em tempo de execução.
 
-**RxJS**: RxJS permite lidar com fluxos de dados assíncronos de forma eficiente e elegante.
+- **RxJS**: RxJS permite lidar com fluxos de dados assíncronos de forma eficiente e elegante.
 
 ## 🔜 Próximos Passos Frontend
 
