@@ -12,6 +12,7 @@ from .serializers import (
 
 
 class RegisterView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (permissions.AllowAny,)
     http_method_names = ['post']
@@ -59,10 +60,16 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class ProfileViewSet(viewsets.ModelViewSet):
     serializer_class = ProfileSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Profile.objects.filter(user=self.request.user)
+        if self.request.user.is_authenticated:
+            return Profile.objects.filter(user=self.request.user)
+        return Profile.objects.none()
+
+    def get_permissions(self):
+        if self.action == 'create':
+            return [permissions.AllowAny()]
+        return [permissions.IsAuthenticated()]
 
 
 class PostViewSet(viewsets.ModelViewSet):
