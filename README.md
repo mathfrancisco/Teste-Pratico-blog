@@ -163,22 +163,25 @@ cd microblog-frontend
 Instale as dependências:
 
 npm install
-
+```
 
 Inicie o servidor de desenvolvimento:
 
+```bash
 ng serve
+```
 
 A aplicação estará disponível em http://localhost:4200/.
 
 
 Build para produção (opcional):
-
+```bash
 ng build --configuration production
+```
 
 Os arquivos de produção serão gerados na pasta dist/microblog-frontend.
 
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 microblog-frontend/
 ├── src/
 │   ├── app/
@@ -202,15 +205,16 @@ microblog-frontend/
 ├── ...
 └── README.md            # Este arquivo
 
-Integração com a API Backend
+## Integração com a API Backend
 A aplicação frontend se comunica com a API backend através dos serviços definidos na pasta services.  As URLs da API são configuradas no arquivo app.config.ts.
 
-🧪 Testes
+## 🧪 Testes
+
 Execute os testes unitários usando:
 
 ng test
 
-🤔 Decisões de Design e Arquitetura
+## 🤔 Decisões de Design e Arquitetura
 
 Componentes Reutilizáveis: A aplicação utiliza componentes Angular para modularizar a interface e promover a reutilização de código.
 
@@ -224,7 +228,7 @@ TypeScript: O uso de TypeScript melhora a qualidade do código, facilita a refat
 
 RxJS: RxJS permite lidar com fluxos de dados assíncronos de forma eficiente e elegante.
 
-🔜 Próximos Passos Frontend
+## 🔜 Próximos Passos Frontend
 
 [ ] Implementar paginação no feed.
 
