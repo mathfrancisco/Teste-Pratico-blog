@@ -184,6 +184,7 @@ ng build --configuration production
 ## 📂 Estrutura do Projeto
 
 
+<pre>
 microblog-frontend/
 ├── src/
 │   ├── app/
@@ -223,7 +224,7 @@ microblog-frontend/
 ├── package.json                # Dependências
 ├── tsconfig.json              # Configuração TypeScript
 └── README.md                  # Documentação
-
+</pre>
 
 ### 📝 Descrição dos Diretórios
 
