@@ -130,6 +130,114 @@ python manage.py test
 - [ ] Implementar sistema de menções (@usuario)
 - [ ] Adicionar endpoints para análises e métricas
 
+# Microblog Frontend
+
+Este é o frontend do projeto Microblog, uma aplicação web que permite aos usuários criar contas, publicar posts, seguir outros usuários e interagir com seus posts.
+
+## 🚀 Funcionalidades
+
+- **Interface Intuitiva:** Design moderno e responsivo para uma experiência de usuário agradável.
+- **Feed Personalizado:** Visualize posts dos usuários que você segue, ordenados cronologicamente.
+- **Criação de Posts:** Publique seus pensamentos e compartilhe com seus seguidores.
+- **Interação com Posts:** Curta e comente nos posts de outros usuários.
+- **Gerenciamento de Perfil:** Personalize seu perfil e veja seus seguidores e seguindo.
+- **Autenticação Segura:** Integração com a API backend para registro e login seguros usando JWT.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Angular 18:** Framework JavaScript para construção de aplicações web robustas e escaláveis.
+- **Bootstrap 5:** Framework CSS para estilização e componentes responsivos.
+- **Tailwind CSS:** Framework utility-first para estilização rápida e personalizável.
+- **TypeScript:** Superset tipado de JavaScript para melhor desenvolvimento e manutenção.
+- **RxJS:** Biblioteca para programação reativa com Observables.
+- **@auth0/angular-jwt:** Biblioteca para gerenciamento de tokens JWT.
+- **@ng-bootstrap/ng-bootstrap:** Biblioteca para integração do Bootstrap com Angular.
+
+## 💻 Instalação e Execução
+
+1. **Clone o repositório:**
+
+```bash
+git clone [URL_DO_SEU_REPOSITORIO]
+cd microblog-frontend
+Instale as dependências:
+
+npm install
+
+
+Inicie o servidor de desenvolvimento:
+
+ng serve
+
+A aplicação estará disponível em http://localhost:4200/.
+
+
+Build para produção (opcional):
+
+ng build --configuration production
+
+Os arquivos de produção serão gerados na pasta dist/microblog-frontend.
+
+📂 Estrutura do Projeto
+microblog-frontend/
+├── src/
+│   ├── app/
+│   │   ├── components/  # Componentes reutilizáveis
+│   │   ├── guards/      # Guardas de rota para autenticação
+│   │   ├── interceptors/ # Interceptadores para requisições HTTP
+│   │   ├── models/      # Modelos de dados
+│   │   ├── services/     # Serviços para comunicação com a API
+│   │   ├── app.component.*  # Componente principal
+│   │   ├── app.config.*     # Configurações do aplicativo
+│   │   ├── app.routes.ts    # Rotas da aplicação
+│   │   └── ...
+│   ├── styles.css        # Estilos globais
+│   ├── ...
+│   ├── index.html        # Arquivo HTML principal
+│   ├── main.ts           # Ponto de entrada principal
+│   └── ...
+├── public/              # Arquivos estáticos
+├── angular.json         # Configurações do Angular CLI
+├── package.json         # Configurações do projeto
+├── ...
+└── README.md            # Este arquivo
+
+Integração com a API Backend
+A aplicação frontend se comunica com a API backend através dos serviços definidos na pasta services.  As URLs da API são configuradas no arquivo app.config.ts.
+
+🧪 Testes
+Execute os testes unitários usando:
+
+ng test
+
+🤔 Decisões de Design e Arquitetura
+
+Componentes Reutilizáveis: A aplicação utiliza componentes Angular para modularizar a interface e promover a reutilização de código.
+
+Serviços para API: Os serviços encapsulam a lógica de comunicação com a API backend, facilitando a manutenção e os testes.
+
+Guardas de Rota: Os guardas de rota protegem as rotas que exigem autenticação, redirecionando usuários não autenticados para a página de login.
+
+Interceptadores HTTP: Os interceptadores adicionam funcionalidades como cabeçalhos de autorização às requisições HTTP.
+
+TypeScript: O uso de TypeScript melhora a qualidade do código, facilita a refatoração e reduz erros em tempo de execução.
+
+RxJS: RxJS permite lidar com fluxos de dados assíncronos de forma eficiente e elegante.
+
+🔜 Próximos Passos Frontend
+
+[ ] Implementar paginação no feed.
+
+[ ] Melhorar a estilização e o design da interface.
+
+[ ] Adicionar recursos de busca.
+
+[ ] Implementar notificações em tempo real.
+
+[ ] Adicionar suporte a upload de imagens.
+
+[ ] Implementar um sistema de mensagens privadas.
+
 ## 👥 Contribuindo
 
 Este projeto é parte de um teste técnico e está atualmente sendo desenvolvido. Contribuições através de issues e pull requests são bem-vindas após a avaliação inicial.
