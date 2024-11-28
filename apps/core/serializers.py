@@ -21,16 +21,21 @@ class ProfileSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username', read_only=True)
     followers_count = serializers.SerializerMethodField()
     following_count = serializers.SerializerMethodField()
+    following = serializers.SerializerMethodField()  # Novo campo
+    bio = serializers.CharField(source='user.profile.bio', read_only=True, allow_null=True)  # biografia
 
     class Meta:
         model = Profile
-        fields = ('id', 'username', 'followers_count', 'following_count')
+        fields = ('id', 'username', 'bio', 'followers_count', 'following_count', 'following')
 
     def get_followers_count(self, obj):
         return obj.followers.count()
 
     def get_following_count(self, obj):
         return Profile.objects.filter(followers=obj.user).count()
+
+    def get_following(self, obj):
+        return [user.id for user in obj.user.following.all()]
 
 class CommentSerializer(serializers.ModelSerializer):
     author_username = serializers.ReadOnlyField(source='author.username')

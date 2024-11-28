@@ -8,6 +8,7 @@ class Profile(models.Model):
     followers = models.ManyToManyField(User, related_name='following', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    bio = models.TextField(blank=True, null=True)  # biografia do usuario
 
     def __str__(self):
         return self.user.username

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router, RouterLink, RouterModule} from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
@@ -8,7 +8,7 @@ import {FormsModule} from '@angular/forms';
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule,RouterModule, RouterLink]
 })
 export class LoginComponent {
   credentials = {
