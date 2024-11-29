@@ -12,8 +12,8 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getProfile(): Observable<Profile> {
-    return this.http.get<Profile>(`${this.apiUrl}/profile/`);
+   getProfile(): Observable<Profile> {
+    return this.http.get<Profile>(`${this.apiUrl}/profile`);
   }
 
 
@@ -28,7 +28,7 @@ export class UserService {
 
 
   followUser(userId: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users/${userId}/follow/`, {});
+    return this.http.post(`${this.apiUrl}/follow/${userId}`, {});
   }
 
   unfollowUser(userId: number): Observable<any> {

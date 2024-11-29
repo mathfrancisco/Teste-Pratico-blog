@@ -1,4 +1,6 @@
 export interface Post {
+  image: any;
+  author_avatar: string;
   id: number;
   author: number;
   author_username: string;

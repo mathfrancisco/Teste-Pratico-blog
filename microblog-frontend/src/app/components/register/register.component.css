@@ -1,0 +1,7 @@
+/* register.component.css */
+
+.relative.rounded-md.shadow-sm input[type="text"],
+.relative.rounded-md.shadow-sm input[type="email"],
+.relative.rounded-md.shadow-sm input[type="password"] {
+    padding-right: 3.5rem; /* Espaço para o ícone (opcional) */
+}

@@ -37,4 +37,12 @@ export class PostService {
     switchMap(c => this.http.post(`${this.apiUrl}/posts/${post.id}/comment/`, { content: c })) // Faz a requisição HTTP
   );
 }
+ getUserPosts(): Observable<Post[]> {
+        return this.http.get<Post[]>(`${this.apiUrl}/posts/user/`);
+    }
+
+    getLikedPosts(): Observable<Post[]> {
+        return this.http.get<Post[]>(`${this.apiUrl}/posts/liked/`);
+    }
+
 }
